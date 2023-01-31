@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="/Javascript/bestellen.js"></script>
+    <link rel="stylesheet" href="/default.css" media="screen">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bestellen</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="index_student_docent.html">Startpagina</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="eigen_data.html">Eigen data</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="algemene_data.html">Algemene data</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="bestellen.html">Bestellen</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="bestelgeschiedenis.html">Bestelgeschiedenis</a>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link" href="profiel.html">Profiel</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  
+    
+    <h1>Besteling maken</h1>
+
+    <div
+    x-data="{
+        responsedata: null,
+        drank: null,
+        koffie-opties: null,
+        koffiebonen: null,
+        thee-opties: null,
+        async createyourownpost() {
+            this.responsedata = await (await fetch('https://jmapi.bacbat32.com/orders/', {
+              method: 'POST',
+              body: JSON.stringify({
+                    drank: this.drank,
+                    koffie-opties: this.koffie-opties,
+                    koffiebonen: this.koffiebonen,
+                    thee-opties: this.opties
+              }),
+              headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+              },
+            })).json();
+            console.log(this.responsedata);
+        },
+    }">
+    <div class="bestellen-group">
+    <div>
+        <label> Kies uw drank:</label>
+        <select name="drank" id="drank" x-model="drank">
+            <option value="koffie">Koffie</option>
+            <option value="thee">Thee</option>
+          </select><br>
+    </div>
+    <div id="koffie-opties">
+        <label style="font-size: 20px;"> kies uw koffie:</label>
+        <select name="koffie" id="koffie" x-model="koffie-opties">
+            <option value="latté">Latté</option>
+            <option value="latte">Latte macchiato</option>
+            <option value="espresso">Cappucino</option>
+            <option value="americano">Americano</option>
+            <option value="mocha">Espresso</option> 
+            <option value="macchiato">Café latté</option>
+            <option value="flat white">Flat White</option>
+            <option value="french press">Lungo</option>
+            <option value="drip coffee">Cortado</option>
+            <option value="cold brew">Ristretto</option>
+          </select><br>
+
+        <label style="font-size: 20px;"> Kies uw koffiebonen:</label>
+        <select name="koffiebonen" id="koffiebonen" x-model="koffiebonen">
+            <option value="arabica">Café cubano</option>
+            <option value="robusta">Brazil</option>
+            <option value="kona">Barahona</option>
+            <option value="colombia">Colombia</option>
+            <option value="ethiopia">Deca naturel</option>
+          </select><br>
+    </div>
+    <div id="thee-opties" style="display:none;">
+        <label style="font-size: 20px;"> Kies uw thee:</label>
+        <select name="thee" id="thee">
+            <option value="gemberthee">Gemberthee</option>
+            <option value="muntthee">Muntthee</option>
+            </select><br>
+    </div>
+    <button class="btn btn-primary" x-on:click="createyourownpost"><a style="color:white;" href="betaling.html">Bestelling plaatsen</a></button>
+</div>
+    <script>
+          // Script om de koffie-opties of thee-opties te laten zien afhankelijk van de gekozen drank
+        var drankOptie = document.getElementById("drank");
+        var koffieOpties = document.getElementById("koffie-opties");
+        var theeOpties = document.getElementById("thee-opties");
+        drankOptie.onchange = function() {
+        if (drankOptie.value === "koffie") {
+            koffieOpties.style.display = "block";
+            theeOpties.style.display = "none";
+        } else if (drankOptie.value === "thee") {
+            koffieOpties.style.display = "none";
+            theeOpties.style.display = "block";
+        }
+    }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,300&display=swap');
+
+body {
+  background-color: rosybrown;
+  font-family: 'Fraunces', serif;
+  font-size: 30px;
+}
+
+h1{
+  color: white;
+  font-size: 40px;
+}
+
+.log-in {
+  float: left;
+}
+
+.nieuwe-gebruiker{
+  float: right;
+
+}
+
+.btn-primary {
+  background-color: #260101;
+  color: white;
+  font-size: 20px;
+  font-size: 20px;
+}
+
+.btn-primary:hover{
+  background-image: url(pexels-igor-haritanovich-1695052.jpg);
+}
+
+.form-control {
+  font-size: 20px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}

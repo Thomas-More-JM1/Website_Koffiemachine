@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <script src="/Javascript/eigendata.js"></script>
+    <link rel="stylesheet" href="/default.css" media="screen">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eigen data</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index_poetsploeg.html">Startpagina</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="eigen_data.html">Eigen data</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="algemene_data.html">Algemene data</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="bestellen.html">Bestellen</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="bestelgeschiedenis.html">Bestelgeschiedenis</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="status_machine.html">Status van de machine</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="profiel.html">Profiel</a>
+                </li>
+            </ul>
+        </div>
+      </nav>
+
+
+
+    <h1 class="h1_eigendata">Eigen data</h1>   
+
+    <canvas id="myChart"></canvas>
+    <script>
+      var ctx = document.getElementById('myChart').getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Dag', 'Week', 'Maand', 'Jaar'],
+          datasets: [{
+            label: 'Koffie',
+            data: [2, 5, 15, 180],
+            backgroundColor: 'black'
+          },
+          {
+            label: 'Thee',
+            data: [0, 3, 6, 50],
+            backgroundColor: 'green'
+          }]
+        },
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: true
+              }
+            }]
+          }
+        }
+      });
+    </script>
+    
+</body>
+</html>

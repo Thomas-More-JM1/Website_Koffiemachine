@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,300&display=swap');
+
+
+body{
+    background-image: url(pexels-igor-haritanovich-1695052.jpg);
+    font-family: 'Fraunces', serif;
+    max-width: 500px;
+    margin: auto;
+}
+
+h1{
+    color: white;
+    font-size: 200px;
+    margin-top: 5%;
+    margin-bottom: 5px;
+}
+
+.parent1{
+    display: block;
+    object-position: left;
+
+}
+
+.btn-danger {
+	box-shadow:inset 0px 1px 0px 0px #f7c5c0;
+	background:linear-gradient(to bottom, #fcbbb6 5%, #a34e48 100%);
+	background-color:#fcbbb6;
+	border-radius:10px;
+	border:2px solid #ed7a70;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Trebuchet MS;
+	font-size:15px;
+	font-weight:bold;
+	padding:15px 32px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #b23e35;
+    display: flex;
+	width: 500px;
+	padding: 20px;
+	margin: 10px;
+}
+
+.btn-danger:hover {
+	background:linear-gradient(to bottom, #a34e48 5%, #fcbbb6 100%);
+	background-color:#a34e48;
+}
+
+.btn-danger:active {
+	position:relative;
+	top:1px;
+}
+
+

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="/Javascript/login.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+  </head>
+  <body>
+    
+    <div class="container my-5 log-in">
+      <h1 class="text-center">Log in:</h1>
+      <div class="row justify-content-center">
+        <div class="col-md-5">
+          <form action="https://jmapi.bacbat32.com/users/" method="get">
+            <div class="form-group">
+              <label for="emaillogin">E-mail:</label>
+              <input type="text" id="emaillogin" name="email" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="passwordlogin">Wachtwoord:</label>
+              <input type="password" id="passwordlogin" name="password" class="form-control">
+            </div>
+            <input type="submit" value="Inloggen" class="btn btn-primary btn-block">
+          </form>
+          <button type="button" class="btn btn-primary" id="wachtwoordvergeten" data-toggle="modal" data-target="#passwordResetModal">
+            Wachtwoord vergeten
+          </button>
+          
+          <div class="modal fade" id="passwordResetModal" tabindex="-1" role="dialog" aria-labelledby="passwordResetModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="passwordResetModalLabel">Wachtwoord resetten</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="form-group">
+                      <label for="emailchange">E-mail adres</label>
+                      <input type="email" class="form-control" id="emailchange" aria-describedby="emailHelp">
+                      <small id="emailHelp" class="form-text text-muted">We sturen u een e-mail met instructies om uw wachtwoord te resetten.</small>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Sluiten</button>
+                  <button type="submit" class="btn btn-primary">Verstuur</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container my-5 nieuwe-gebruiker">
+      <h1 class="text-center">Nieuwe gebruiker aanmaken:</h1>
+      <div class="row justify-content-center">
+        <div class="col-md-5">
+          <form action="https://jmapi.bacbat32.com/users/create/" method="post">
+            <div class="form-group">
+              <label for="email">E-mailadres:</label>
+              <input type="email" class="form-control" id="email" name="email">
+            </div>
+            <div class="form-group">
+              <label for="passwordcreate">Wachtwoord:</label>
+              <input type="password" class="form-control" id="passwordcreate" name="password">
+            </div>
+            <div class="form-group">
+              <label for="groep">Groep:</label>
+              <select class="form-control" id="groep" name="groep">
+              <option value="studenten-docenten">Studenten & Docenten</option>
+              <option value="poetsploeg">Poetsploeg</option>
+            </select>
+            </div>
+            <input type="submit" value="Nieuw profiel aanmaken" class="btn btn-primary btn-block">
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
